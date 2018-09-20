@@ -1,0 +1,15 @@
+import java.util.*;
+import java.time.*;
+
+public class example{
+public static DayOfWeek getDay(String day, String month,String year){
+    
+    int day_int = Integer.parseInt(day);
+    int month_int = Integer.parseInt(month);
+    int year_int = Integer.parseInt(year);
+
+   
+    LocalDate date = LocalDate.of(year_int,month_int,day_int); 
+    DayOfWeek dayOfWeek = date.getDayOfWeek(); 
+    return dayOfWeek;
+}
