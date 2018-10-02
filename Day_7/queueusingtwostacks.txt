@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        Queue<Integer> queue = new LinkedList<>();
+        
+        int q = scan.nextInt();
+        
+        for(int i = 0; i < q; i++){
+            int op = scan.nextInt();
+            if(op == 1) {
+                int in = scan.nextInt();
+                queue.add(in);
+            }
+            if(op == 2){
+                queue.remove();
+            }
+            if(op == 3){
+                int p = queue.peek();
+                System.out.println(p);
+            }
+            
+        }
+        
+        
+    }
+}
