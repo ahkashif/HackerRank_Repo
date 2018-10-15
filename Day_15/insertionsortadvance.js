@@ -25,8 +25,8 @@ function readLine() {
 }
 
 // Complete the insertionSort function below.
-function insertionSort(arr) {
-     var i = 0, j = 0, count = 0, leftLength = left.length, rightLength = right.length;
+function merge(arr, left, right) {
+    var i = 0, j = 0, count = 0, leftLength = left.length, rightLength = right.length;
     while(i < leftLength || j < rightLength) {
         if(i === leftLength) {
             arr[i + j] = right[j];
@@ -44,7 +44,16 @@ function insertionSort(arr) {
         }
     }
     return count;
-
+}
+function insertionSort(arr) {
+    var length = arr.length
+    if(length < 2){
+        return 0;  
+    }    
+    var middle = (length + 1) / 2;
+    var left = arr.slice(0, middle);
+    var right = arr.slice(middle, length);
+    return insertionSort(left) + insertionSort(right) + merge(arr, left, right);
 }
 
 function main() {
